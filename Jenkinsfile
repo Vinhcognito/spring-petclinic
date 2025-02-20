@@ -1,6 +1,11 @@
 pipeline {
     agent any
     
+	environment {
+        JAVA_HOME = "${env.JAVA_HOME}"
+        PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
+    }
+	
     triggers {
         cron('H/10 * * * 1')
     }
