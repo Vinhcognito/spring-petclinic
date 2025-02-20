@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Build') {
 			steps {
-				bat 'set JAVA_HOME=C:\\path\\to\\jdk'
+				bat 'set JAVA_HOME=C:\Users\lizbo\.jdks\jdk-21.0.5'
 				bat 'set PATH=%JAVA_HOME%\\bin;%PATH%'
 				bat './mvnw clean package'
 			}
