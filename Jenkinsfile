@@ -12,10 +12,12 @@ pipeline {
     
     stages {
         stage('Build') {
-            steps {
-                bat './mvnw clean package'
-            }
-        }
+			steps {
+				bat 'set JAVA_HOME=C:\\path\\to\\jdk'
+				bat 'set PATH=%JAVA_HOME%\\bin;%PATH%'
+				bat './mvnw clean package'
+			}
+		}
         
         stage('Code Coverage') {
             steps {
